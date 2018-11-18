@@ -8,6 +8,17 @@ In order to make it more user-friendly, users are allowed to specify which tools
 ## System Requirements:
 To use this tool, it requires that you have all the following databases downloaded correctly. (See more details in project report)
 
+## Usage:
+python analysis.py [- flags]
+-f infile.fasta
+-a accession
+-outTab
+-outSpace
+-outTsv
+-noBlast
+-noPfam
+-noInterpro
+
 ## 1.	BLAST:
 BLAST (Basic Local Alignment Search Tool) is a tool to infer functional and evolutionary relationships via alignment, as well as identify members of gene families. Since we were interested in finding possible A. baumannii protein functions, we used the NCBI BLASTp to search against protein sequence databases. We utilized the Biopython package in order to invoke the NCBI BLAST server over the internet, as well as use the built-in parsers in order to work with the raw XML files output by BLAST. We then wrote a Python script (blast.py) which queried our 100 protein sequences of interest and returned the output (which contained up to 10 hits) in two different file formats per sequence: a raw XML file output by BLAST, and a separate plain text file which contained the parsed information such as the protein accession number, gi number, predicted/known protein function, and E-value.
 ## 2.	InterPro:
